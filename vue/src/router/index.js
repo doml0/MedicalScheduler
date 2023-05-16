@@ -5,13 +5,11 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-import Calendar from '../components/Calendar.vue'
-import AppointmentForm from '../components/AppointmentForm.vue'
-import Patient from '../views/Patient.vue'
-import DoctorAccount from '../components/DoctorAccount'
-import UpdateDoctorForm from '../components/UpdateDoctorForm'
-import RegisterDoctorForm from '../components/RegisterDoctorForm'
-import ReviewView from '../views/ReviewView'
+import AdditionalInfo from '../views/AdditionalInfo'
+import PatientForm from '../components/PatientForm'
+import RegisterDoctor from '../views/RegisterDoctor'
+import DoctorForm from '../components/DoctorForm'
+
 
 
 Vue.use(Router)
@@ -62,59 +60,35 @@ const router = new Router({
       }
     },
     {
-      path: "/patientInfo",
-      name: "patientInfo",
-      component: Patient,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: "/doctorInfo",
-      name: "doctorInfo",
-      component: RegisterDoctorForm,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: "/calendar",
-      name: "calendar",
-      component: Calendar,
+      path: "/registerDoctor",
+      name: "registerDoctor",
+      component: RegisterDoctor,
       meta: {
         requiresAuth: true
       }
     },
-     {
-      path: "/doctors/:id",
-      name: "doctor",
-      component: AppointmentForm,
+    {
+      path: "/additionalInfo",
+      name: "additionalInfo",
+      component: AdditionalInfo,
       meta: {
-        requiresAuth: false
+        requiresAuth: true,
       }
     },
     {
-      path: "/reviews",
-      name: "reviews",
-      component: ReviewView,
+      path: "/patientForm",
+      name: "patientForm",
+      component: PatientForm,
       meta: {
-        requiresAuth: false
-      }
-    },
-      {
-      path: "/doctorAccount",
-      name: "doctorAccount",
-      component: DoctorAccount,
-      meta: {
-        requiresAuth: false
+        requiresAuth: true,
       }
     },
     {
-      path: "/updateDoctor/:id",
-      name: "UpdateDoctorForm",
-      component: UpdateDoctorForm,
+      path: "/doctorForm",
+      name: "doctorForm",
+      component: DoctorForm,
       meta: {
-        requiresAuth: false
+        requiresAuth: true,
       }
     }
   ]

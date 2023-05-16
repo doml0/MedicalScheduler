@@ -37,14 +37,14 @@
               class="mt-4"
             >
             </v-text-field>
-            
+
           <v-btn class="mb-4" type="submit">Sign in</v-btn>
           <p>
             <router-link :to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
           </v-form>
       </v-card>
     </v-col>
-  
+
   </v-container>
 </template>
 
@@ -71,7 +71,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            this.$router.push("/additionalInfo");
           }
         })
         .catch(error => {

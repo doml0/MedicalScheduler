@@ -1,6 +1,6 @@
 <template>
     <v-container fill-height fluid>
-      <v-col align="center" justify="center" fill-height class="d-flex justify-center"> 
+      <v-col align="center" justify="center" fill-height class="d-flex justify-center">
         <div id="register" class="text-center">
           <v-card>
           <v-form class="px-6 pb-5 pt-6" ref="registerForm" id="registerForm" v-model="valid" @submit.prevent="register();">
@@ -12,7 +12,7 @@
             <v-text-field
                 id="username"
                 v-model="user.username"
-                :rules="nameRules"
+
                 :counter="50"
                 label="Username"
                 prepend-inner-icon="mdi-account"
@@ -21,25 +21,25 @@
                 class="mt-4"
               ></v-text-field>
 
-            <v-text-field 
+            <v-text-field
                 type="password"
                 id="password"
                 v-model="user.password"
                 label="Password"
                 :counter="20"
-                :rules="passwordRules"
+
                 prepend-inner-icon="mdi-lock"
                 required
                 outlined
             > </v-text-field>
 
-            <v-text-field 
+            <v-text-field
                 type="password"
                 id="confirmPassword"
                 v-model="user.confirmPassword"
                 label="Confirm Password"
                 :counter="20"
-                :rules="passwordRules"
+
                 prepend-inner-icon="mdi-lock"
                 required
                 outlined
@@ -48,7 +48,7 @@
 
             <v-btn type="submit" :disabled="!valid">Create Account</v-btn>
 
-    
+
             <v-btn @click="clearInput">
               Clear Fields
             </v-btn>
@@ -113,7 +113,7 @@ import authService from '../services/AuthService';
           .then((response) => {
             if (response.status == 201) {
               this.$router.push({
-                path: '/patientInfo',
+                path: '/',
                 query: { registration: 'success' },
               });
             }

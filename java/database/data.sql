@@ -28,23 +28,23 @@ VALUES ('YoungjinLovesCake','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft
 -- doctors CHANGE USER_ID ACCODRINGLY
 INSERT INTO doctor
 (user_id, first_name,last_name,specialty,suite_number, costperhour, phone_number)
-VALUES(3, 'Qing','Jin','Dermontology',3, 3000, '34792347');
+VALUES(3, 'Qing','Jin','Dermatology',3001, 150, '1');
 
 INSERT INTO doctor
 (user_id, first_name,last_name,specialty,suite_number, costperhour, phone_number)
-VALUES(4, 'Jordan','Bruntz','Bones',4, 4000, '234683264283');
+VALUES(4, 'Jordan','Bruntz','Orthapaedic',3002, 225, '2');
 
 INSERT INTO doctor
 (user_id, first_name,last_name,specialty,suite_number, costperhour, phone_number)
-VALUES(5, 'Salaj','Choudhary','Brain doctor', 6, 8000, '73737262');
+VALUES(5, 'Salaj','Choudhary','Neurology', 3003, 125, '3');
 
 INSERT INTO doctor
 (user_id, first_name,last_name,specialty,suite_number, costperhour, phone_number)
-VALUES(6, 'Dom','Lorenz','Heart Surgeon', 5, 6000, '333333');
+VALUES(6, 'Dom','Lorenz','Pediatrician', 3004, 75, '4');
 
 INSERT INTO doctor
 (user_id, first_name,last_name,specialty,suite_number, costperhour, phone_number)
-VALUES(7, 'Youngjin','Kwon','Psychologist', 7, 9000, '384834756834');
+VALUES(7, 'Youngjin','Kwon','Psychologist', 3005, 500, '5');
 -------------------------------------------------------------------------------------------------------
 
 -- patient/user RUN THIS FIRST
@@ -99,7 +99,7 @@ VALUES ('OMG! SO GOOD', 'YOU WOULD NOT BELIEVE HOW GOOD THIS SERVICE IS', 5, '20
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)
-VALUES ('YAY', 'CANCER CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Dom'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
+VALUES ('YAY', 'CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Dom'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)
@@ -123,7 +123,7 @@ VALUES ('It was pretty good!', 'I had to wait a little!', 4, '2023/09/08', (SELE
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)
-VALUES ('YAY', 'CANCER CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Jordan'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
+VALUES ('YAY', 'CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Jordan'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)
@@ -136,7 +136,7 @@ VALUES ('Thank you!', 'He is the best!', 5, '2023/09/08', (SELECT doctor_id FROM
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)
-VALUES ('YAY', 'CANCER CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Youngjin'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
+VALUES ('YAY', 'CURED!!!', 5, '2023/09/08', (SELECT doctor_id FROM doctor WHERE doctor.first_name='Youngjin'), (SELECT patient_id FROM patient WHERE patient.first_name='Jordan'));
 
 INSERT INTO review(
 review_title, review_body, review_rating, review_date, doctor_id, patient_id)

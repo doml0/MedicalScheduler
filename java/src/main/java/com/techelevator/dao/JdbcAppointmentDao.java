@@ -104,8 +104,11 @@ public class JdbcAppointmentDao implements AppointmentDao{
 
     @Override
     public void updateAppointment(int appointmentId, Appointment appointment) {
-        String sql = "UPDATE appointment SET appointment_id=?, patient_id=?, doctor_id=?, appointment_duration=?, description=? WHERE appointment_id=?;";
-        jdbcTemplate.update(sql,appointment, appointmentId);
+        String sql = "UPDATE public.appointment\n" +
+                "\tSET appointment_id=?, patient_id=?, doctor_id=?, appointment_duration=?, description=?, appointment_date=?, appointment_time=?\n" +
+                "\tWHERE appointment_id = ?;";
+        jdbcTemplate.update(sql,appointment.getAppointmentId(), appointment.getPatientId(), appointment.getDoctorId(), appointment.getAppointmentDuration(), appointment.getDescription(),
+                appointment.getAppointmentDate(), appointment.getAppointmentTime(), appointmentId);
 
     }
 

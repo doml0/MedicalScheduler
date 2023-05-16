@@ -4,24 +4,23 @@
     <v-layout>
       <admin-view v-if="getRoleAdmin" />
       <patient-list v-else-if="getRoleDoctor" />
-      <doctor-list v-else />
+      <patient-dashboard v-else />
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import DoctorList from '../components/DoctorList.vue'
-import PatientList from '../components/PatientList.vue'
-import AdminView from'../components/AdminView.vue'
+import PatientDashboard from '../components/PatientDashboard.vue'
 import Navbar from '../components/Navbar.vue'
 
 export default {
   name: 'home',
   components: {
-    DoctorList,
-    PatientList,
-    AdminView,
+    PatientDashboard,
     Navbar
+  },
+  methods: {
+
   },
   computed: {
     getRoleAdmin() {
@@ -35,7 +34,7 @@ export default {
     }
   },
   created() {
-    console.log(this.$store.state.user.authorities[0].name)
+
   }
 }
 </script>
