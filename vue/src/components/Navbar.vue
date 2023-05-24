@@ -20,12 +20,12 @@
         /></v-list-item>
         <v-list-item
           ><router-link class="rl" v-bind:to="{ name: 'calendar' }"
-            >Calendar</router-link
+            >My Appointments</router-link
           ></v-list-item
         >
         <v-list-item
           ><router-link class="rl" v-bind:to="{ name: 'reviews' }"
-            >Reviews</router-link
+            >My Reviews</router-link
           ></v-list-item
         >
         <v-list-item

@@ -9,6 +9,8 @@ import AdditionalInfo from '../views/AdditionalInfo'
 import PatientForm from '../components/PatientForm'
 import RegisterDoctor from '../views/RegisterDoctor'
 import DoctorForm from '../components/DoctorForm'
+import AvailabilityPage from '../views/AvailabilityPage'
+import ReviewsPage from '../views/ReviewsPage'
 
 
 
@@ -90,7 +92,23 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       }
+    },
+  {
+    path: "/availability/:id",
+    name: "availabilityPage",
+    component: AvailabilityPage,
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
+    path: "/reviews/:id",
+    name: "reviewsPage",
+    component: ReviewsPage,
+    meta: {
+      requiresAuth: true
     }
+  }
   ]
 })
 

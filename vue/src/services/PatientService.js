@@ -22,4 +22,7 @@ export default {
     create(patient) {
         return http.post(`/patients`, patient);
     },
+    getPatientByUserId(id) {
+        return http.get(`/patients/${id}`);
+    }
 }
